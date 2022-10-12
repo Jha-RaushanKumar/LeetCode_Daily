@@ -1,0 +1,61 @@
+import java.util.* ;
+import java.io.*; 
+
+public class Stack {
+    
+    int top;
+    int arr[];
+    int maxsize;
+    public Stack(int size){
+         top = -1;
+         arr = new int[size];
+         maxsize = size;
+    }
+    
+    void push(int num) {
+        // Write your code here.
+        if(top!=maxsize-1){
+            top++;
+            arr[top] = num;
+        }
+        
+    }
+    int pop() {
+        if(top!=-1){
+            int x = arr[top];
+            top--;
+            return x;
+        }
+        else{
+            return -1;
+        }
+        // Write your code here.
+    }
+    int top() {
+        // Write your code here.
+        if(top!=-1){
+            return arr[top];
+        }
+        else{
+            return -1;
+        }
+    }
+    int isEmpty() {
+        if(top == -1){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+        // Write your code here.
+    }
+    int isFull() {
+        // Write your code here.
+        if(top == maxsize-1){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
+}
